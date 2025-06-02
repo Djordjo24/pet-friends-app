@@ -1,0 +1,32 @@
+.petDirectory main {
+  width: 100vw;
+  background-color: var(--beige-color);
+  color: var(--green-color);
+  padding: 50px 200px;
+}
+
+.petDirectory main h1 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.petDirectory .layout {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 30px;
+}
+
+.petDirectory .layout .pets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.petDirectory .layout .category {
+  text-align: end;
+}
+
+.petDirectory .layout .category h2 {
+  text-align: end;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,62 @@
+.homepage section {
+  width: 100vw;
+  background-color: var(--beige-color);
+}
+
+.homepage .heroSection {
+  padding: 50px 200px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+}
+
+.homepage .heroSection h1 {
+  color: var(--green-color);
+  font-size: 50px;
+}
+
+.homepage .heroSection p {
+  font-size: 20px;
+  margin: 40px 0;
+}
+
+.homepage .heroSection .reportButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.homepage .heroSection .reportButtons button {
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: 2px solid var(--green-color);
+  color: var(--beige-color);
+  background-color: var(--green-color);
+  padding: 12px 25px 10px 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.homepage .heroSection .reportButtons button:hover {
+  color: var(--green-color);
+  background-color: transparent;
+}
+
+.homepage .heroSection .detectiveColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .heroSection .detectiveColumn .detective {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+.homepage .tips {
+  padding: 50px 200px;
+}
+
+.homepage .tips h1 {
+  color: var(--green-color);
+  margin-bottom: 10px;
+}

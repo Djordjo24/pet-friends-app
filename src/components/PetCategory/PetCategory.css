@@ -1,0 +1,34 @@
+.petCategory {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.petCategory p {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.petCategory button {
+  padding: 15px;
+  color: #ffff;
+  background-color: var(--green-color);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  box-shadow: 2px 5px 5px rgba(105, 101, 101, 0.852);
+  transition: all 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.petCategory button:hover {
+  transform: translateY(1px);
+}
+
+.petCategory button:active {
+  transform: scale(0.95);
+}

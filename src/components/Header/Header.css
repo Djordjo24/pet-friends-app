@@ -1,0 +1,59 @@
+header {
+  padding: 20px 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--green-color);
+  background-color: #ffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--green-color);
+}
+
+header .logo .icon {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  font-size: 17px;
+  text-decoration: none;
+  color: var(--green-color);
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--beige-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+}
