@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { toUpperCase } from "../../utils/utils";
 import Header from "../Header/Header";
 import Map from "../Map/Map.tsx";
+import Footer from "../Footer/Footer.tsx";
 
 interface PetProfileProps {
   status: string;
@@ -99,6 +100,7 @@ const PetProfile = ({ status }: PetProfileProps) => {
           </section>
         )}
       </main>
+      <Footer />
     </div>
   );
 };

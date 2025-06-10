@@ -5,6 +5,7 @@ import { petCategories } from "../../mockData/mockData.tsx";
 import Header from "../../components/Header/Header.tsx";
 import PetCategory from "../../components/PetCategory/PetCategory.tsx";
 import PetCard from "../../components/PetCard/PetCard.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
 
 interface PetDirectoryProps {
   status: string;
@@ -68,6 +69,7 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

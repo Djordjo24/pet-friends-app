@@ -1,0 +1,93 @@
+footer {
+  background-color: var(--green-color);
+  padding: 30px 200px;
+}
+
+footer .sectionOne {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .sectionOne .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffff;
+}
+
+footer .sectionOne .logo .icon {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+footer .sectionOne .logo h1 {
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+footer .sectionOne .footerContent {
+  display: flex;
+  gap: 20px;
+}
+
+footer .sectionOne .footerContent section {
+  width: max-content;
+  background-color: transparent;
+}
+
+footer .footerContent section h3 {
+  color: var(--beige-color);
+  padding-bottom: 15px;
+}
+
+footer .footerContent section nav {
+  display: grid;
+  gap: 8px;
+}
+
+footer .sectionTwo {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff28;
+  margin: 40px 0;
+}
+
+footer .sectionThree {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .sectionThree div {
+  display: flex;
+  gap: 20px;
+  color: #ffff;
+}
+
+footer .sectionThree a {
+  color: #807f7f;
+}
+
+footer .sectionThree .social a {
+  color: #ffff;
+  font-size: 25px;
+}
+
+footer .sectionThree .social a:hover {
+  color: var(--beige-color);
+}
+
+footer a {
+  color: #ffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+footer a:hover {
+  color: var(--beige-color);
+}
