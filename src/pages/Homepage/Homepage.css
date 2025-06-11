@@ -1,9 +1,6 @@
-.homepage section {
+.homepage .heroSection {
   width: 100vw;
   background-color: var(--beige-color);
-}
-
-.homepage .heroSection {
   padding: 50px 200px;
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -52,11 +49,34 @@
   height: 300px;
   object-fit: contain;
 }
-.homepage .tips {
+.homepage .tips,
+.aboutUs,
+.faqs {
   padding: 50px 200px;
 }
 
-.homepage .tips h1 {
+.homepage .aboutUs {
+  background-color: var(--beigeLight-color);
+}
+
+.homepage .tips ul li,
+.faqs ul li {
+  list-style: none;
+  display: grid;
+  margin: 20px 0;
+  font-size: 17px;
+}
+
+.homepage .tips h1,
+.aboutUs h1,
+.faqs h1 {
   color: var(--green-color);
   margin-bottom: 10px;
+  font-size: 45px;
+}
+
+.homepage .tips p,
+.aboutUs p {
+  margin: 20px 0;
+  font-size: 17px;
 }
