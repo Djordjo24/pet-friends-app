@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
       <section className="sectionOne">
         <div>
-          <Link to="/" className="logo">
+          <Link to="/" state={{ scrollTo: "heroSection" }} className="logo">
             <IoPaw className="icon" />
             <h1>Pet friends</h1>
           </Link>

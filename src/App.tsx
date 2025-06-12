@@ -6,12 +6,14 @@ import Homepage from "./pages/Homepage/Homepage";
 import PetDirectory from "./pages/PetDirectory/PetDirectory.tsx";
 import FormPage from "./pages/FormPage/FormPage.tsx";
 import PetProfile from "./components/PetProfile/PetProfile.tsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.tsx";
 
 function App() {
   return (
     <Background>
       <Wrapper>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route
