@@ -22,11 +22,42 @@
   gap: 30px;
 }
 
-.petDirectory .layout .category {
+.petDirectory .layout .sidebar .searchByName,
+.searchByCity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.petDirectory .layout .sidebar .searchByName input,
+.searchByCity input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  outline: none;
+  color: var(--green-color);
+}
+
+.petDirectory .layout .sidebar .searchByName input::placeholder,
+.searchByCity input::placeholder {
+  opacity: 0.5;
+}
+
+.petDirectory .layout .sidebar .searchByName .searchIcon,
+.searchByCity .searchIcon {
+  font-size: 30px;
+}
+
+.petDirectory .layout .sidebar .category {
   text-align: end;
 }
 
-.petDirectory .layout .category h2 {
+.petDirectory .layout .sidebar .category h2 {
   text-align: end;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }

@@ -6,12 +6,20 @@ import { Link } from "react-router-dom";
 interface PetCardProps {
   status: string;
   id: string;
-  images: [string, string, string];
+  images: string[];
   category: string;
   petName: string;
+  city: string;
 }
 
-const PetCard = ({ status, id, images, category, petName }: PetCardProps) => {
+const PetCard = ({
+  status,
+  id,
+  images,
+  category,
+  petName,
+  city,
+}: PetCardProps) => {
   return (
     <Link to={`/${toUpperCase(status)}PetProfile/${id}`} className="petCard">
       {images?.[0] ? (
@@ -21,6 +29,7 @@ const PetCard = ({ status, id, images, category, petName }: PetCardProps) => {
       )}
       <p>{toUpperCase(category)}</p>
       <h3>{petName}</h3>
+      <p>{city}</p>
     </Link>
   );
 };

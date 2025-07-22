@@ -15,11 +15,9 @@
   border-radius: 10px;
   padding: 15px;
   background-color: #ffff;
-  display: grid;
-  gap: 5px;
 }
 
-.petProfile main .one {
+.petProfile main .images {
   height: 500px;
   grid-column: 1/-1;
   display: grid;
@@ -28,13 +26,13 @@
   gap: 10px;
 }
 
-.petProfile main .one .large {
+.petProfile main .images .large {
   height: 100%;
   grid-row: 1 / 3;
   grid-column: 1;
 }
 
-.petProfile main .one .small {
+.petProfile main .images .small {
   height: 100%;
   grid-row: 1/3;
   grid-column: 2;
@@ -43,33 +41,49 @@
   gap: 10px;
 }
 
-.petProfile main .one .small img {
+.petProfile main .images .small img {
   height: calc(50% - 5px);
 }
 
-.petProfile main .one .petImage {
+.petProfile main .images .petImage {
   height: 100%;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
+  background-color: var(--beigeLight-color);
 }
 
-.petProfile main .two {
+.petProfile main .basicInfo {
   grid-column: 1;
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
-.petProfile main .three {
+.petProfile main .basicInfo h1 {
+  margin-bottom: 5px;
+}
+
+.petProfile main .additionalInfo {
   grid-column: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.petProfile main .four {
+.petProfile main .additionalInfo a {
+  text-decoration: none;
+  color: var(--green-color);
+}
+
+.petProfile main .address {
   grid-column: 1/-1;
 }
 
-.petProfile main .five {
-  grid-column: 1/-1;
+.petProfile main .address h3 {
+  margin-bottom: 10px;
+}
+
+.noBold {
+  font-weight: 100;
+  font-size: 16px;
 }

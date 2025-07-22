@@ -28,6 +28,7 @@ type PetInfo = {
   date: string;
   time: string;
   formattedAddress: string;
+  city: string;
   owner: string;
   contact: string;
   medication: string;
@@ -53,6 +54,7 @@ const Form = (props: FormProps) => {
     date: "",
     time: "",
     formattedAddress: "",
+    city: "",
     owner: "",
     contact: "",
     medication: "",
@@ -156,6 +158,8 @@ const Form = (props: FormProps) => {
         const [lng, lat] = coords;
         setLat(lat);
         setLng(lng);
+        const city = result?.features?.[0].properties?.city;
+        setPetInfo((prev) => ({ ...prev, city: city }));
       } catch (error) {
         console.log(error);
       }
@@ -200,6 +204,7 @@ const Form = (props: FormProps) => {
             date: petInfo.date,
             time: petInfo.time,
             formattedAddress: petInfo.formattedAddress,
+            city: petInfo.city,
           },
     ];
     localStorage.setItem(dataStatus, JSON.stringify(updatedData));
