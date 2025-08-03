@@ -21,7 +21,6 @@ const PetCategory = ({
   };
   return (
     <li className="petCategory">
-      <p>{title}</p>
       <button
         style={{
           backgroundColor:
@@ -31,6 +30,7 @@ const PetCategory = ({
       >
         {icon}
       </button>
+      <p>{title}</p>
     </li>
   );
 };
