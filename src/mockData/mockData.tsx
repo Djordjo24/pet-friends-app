@@ -50,7 +50,7 @@ export const petCategories = [
 export const Inputs = [
   {
     id: "petName",
-    label: "*Pet name",
+    missingLabel: "*Pet name",
     type: "text",
     name: "petName",
     required: true,
@@ -58,7 +58,8 @@ export const Inputs = [
   },
   {
     id: "date",
-    label: "*Date",
+    missinglabel: "*Date of disappearance",
+    foundlabel: "*Date found",
     type: "date",
     name: "date",
     min: "2025-01-01",
@@ -68,7 +69,8 @@ export const Inputs = [
   },
   {
     id: "time",
-    label: "*Time",
+    missinglabel: "*Time of disappearance",
+    foundlabel: "*Time found",
     type: "time",
     name: "time",
     required: true,
@@ -76,7 +78,8 @@ export const Inputs = [
   },
   {
     id: "formattedAddress",
-    label: "*Address",
+    missinglabel: "*Address of disappearance",
+    foundlabel: "*Found at address",
     type: "text",
     name: "formattedAddress",
     required: true,
@@ -85,7 +88,7 @@ export const Inputs = [
   },
   {
     id: "owner",
-    label: "*Owner",
+    missinglabel: "*Owner",
     type: "text",
     name: "owner",
     placeholder: "John Doe",
@@ -95,7 +98,7 @@ export const Inputs = [
   },
   {
     id: "contact",
-    label: "*Contact",
+    missinglabel: "*Contact",
     type: "tel",
     name: "contact",
     placeholder: "+381641234567 or 0641234567",
@@ -105,13 +108,13 @@ export const Inputs = [
   },
   {
     id: "medication",
-    label: "If the pet is taking medication, what kind?",
+    missinglabel: "If the pet is taking medication, what kind?",
     type: "text",
     name: "medication",
   },
   {
     id: "reward",
-    label: "Pet finder reward (€)",
+    missinglabel: "Pet finder reward (€)",
     type: "number",
     name: "reward",
   },

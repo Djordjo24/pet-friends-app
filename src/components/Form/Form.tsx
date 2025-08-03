@@ -10,14 +10,14 @@ import Input from "../Input/Input.tsx";
 
 const GEOAPIFY_API_KEY = "7e260f7da7d34691831f99c1ac4f8371";
 
+interface FormProps {
+  status: string;
+}
+
 interface SugesstionsArray {
   properties: {
     formatted: string;
   };
-}
-
-interface FormProps {
-  status: string;
 }
 
 type PetInfo = {
@@ -182,6 +182,8 @@ const Form = (props: FormProps) => {
     )
       return;
 
+    if (!lat && !lng) return;
+
     const dataStatus = props.status === "missing" ? "MissingPets" : "FoundPets";
     const id = uuidv4();
     const existingData = JSON.parse(localStorage.getItem(dataStatus) || "[]");
@@ -286,7 +288,11 @@ const Form = (props: FormProps) => {
             return;
           return (
             <section key={input.id}>
-              <label>{input.label}</label>
+              <label>
+                {props.status === "missing"
+                  ? input.missinglabel
+                  : input.foundlabel}
+              </label>
               <Input
                 {...input}
                 value={petInfo[input.name as keyof PetInfo]}
