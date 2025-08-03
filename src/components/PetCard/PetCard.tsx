@@ -20,6 +20,12 @@ const PetCard = ({
   petName,
   city,
 }: PetCardProps) => {
+  const updatedCity = city
+    .split(" Urban Municipality")
+    .join("")
+    .split("City of ")
+    .join("");
+
   return (
     <Link to={`/${toUpperCase(status)}PetProfile/${id}`} className="petCard">
       {images?.[0] ? (
@@ -29,7 +35,7 @@ const PetCard = ({
       )}
       <p>{toUpperCase(category)}</p>
       <h3>{petName}</h3>
-      <p>{city}</p>
+      <p>{updatedCity}</p>
     </Link>
   );
 };

@@ -31,9 +31,19 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
       ? data
       : data
           .filter((pet: PetObject) =>
-            status === "missing" ? pet.petName.includes(searchByName) : true
+            status === "missing"
+              ? pet.petName.toLowerCase().includes(searchByName.toLowerCase())
+              : true
           )
-          .filter((pet: PetObject) => pet.city.includes(searchByCity))
+          .filter((pet: PetObject) =>
+            pet.city
+              .split(" Urban Municipality")
+              .join("")
+              .split("City of ")
+              .join("")
+              .toLowerCase()
+              .includes(searchByCity.toLowerCase())
+          )
           .filter((pet: PetObject) =>
             category && category !== "reset" ? pet.category === category : true
           );
@@ -57,23 +67,6 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
       <main>
         <h1>{toUpperCase(status)} Pets</h1>
         <div className="layout">
-          <div className="pets">
-            {filteredData.length > 0 ? (
-              filteredData.map((pet: PetObject) => (
-                <PetCard
-                  status={status}
-                  key={pet.id}
-                  id={pet.id}
-                  images={pet.images}
-                  category={pet.category}
-                  petName={pet.petName}
-                  city={pet.city}
-                />
-              ))
-            ) : (
-              <p>There are currently no missing pets.</p>
-            )}
-          </div>
           <div className="sidebar">
             {status === "missing" && (
               <div className="searchByName">
@@ -114,6 +107,23 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
                 })}
               </ul>
             </div>
+          </div>
+          <div className="pets">
+            {filteredData.length > 0 ? (
+              filteredData.map((pet: PetObject) => (
+                <PetCard
+                  status={status}
+                  key={pet.id}
+                  id={pet.id}
+                  images={pet.images}
+                  category={pet.category}
+                  petName={pet.petName}
+                  city={pet.city}
+                />
+              ))
+            ) : (
+              <p>There are currently no missing pets.</p>
+            )}
           </div>
         </div>
       </main>
