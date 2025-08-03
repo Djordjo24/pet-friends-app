@@ -133,46 +133,48 @@ const PetProfile = ({ status }: PetProfileProps) => {
           </div>
         </section>
 
-        <section className="basicInfo">
-          <h1>{pet?.petName}</h1>
-          <p>{pet?.description || "No pet description."}</p>
-        </section>
-
-        <section className="additionalInfo">
-          <div>
-            <h3>{status === "missing" ? "Disappeared" : "Found"} on:</h3>
-            <p>
-              {new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }).format(new Date(pet?.date))}{" "}
-              // {pet?.time + "h"}
-            </p>
+        <section className="info">
+          <div className="basicInfo">
+            <h1>{pet?.petName}</h1>
+            <p>{pet?.description || "No pet description."}</p>
           </div>
-          {status === "missing" && (
-            <>
-              <div>
-                <h3>Medication:</h3>
-                <p>{pet?.medication || "Does not use medications."}</p>
-              </div>
 
-              <div>
-                <h3>Owner:</h3>
-                <p>{pet?.owner}</p>
-              </div>
+          <div className="additionalInfo">
+            <div>
+              <h3>{status === "missing" ? "Disappeared" : "Found"} on:</h3>
+              <p>
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                }).format(new Date(pet?.date))}{" "}
+                // {pet?.time + "h"}
+              </p>
+            </div>
+            {status === "missing" && (
+              <>
+                <div>
+                  <h3>Medication:</h3>
+                  <p>{pet?.medication || "Does not use medications."}</p>
+                </div>
 
-              <div>
-                <h3>Contact:</h3>
-                <a href={`tel:${pet?.contact}`}>{pet?.contact}</a>
-              </div>
+                <div>
+                  <h3>Owner:</h3>
+                  <p>{pet?.owner}</p>
+                </div>
 
-              <div>
-                <h3>Reward:</h3>
-                <p>{pet?.reward ? pet?.reward + " €" : "No rewards."}</p>
-              </div>
-            </>
-          )}
+                <div>
+                  <h3>Contact:</h3>
+                  <a href={`tel:${pet?.contact}`}>{pet?.contact}</a>
+                </div>
+
+                <div>
+                  <h3>Reward:</h3>
+                  <p>{pet?.reward ? pet?.reward + " €" : "No rewards."}</p>
+                </div>
+              </>
+            )}
+          </div>
         </section>
 
         <section className="address">
@@ -182,7 +184,6 @@ const PetProfile = ({ status }: PetProfileProps) => {
               {updatedLocation(pet?.formattedAddress)}
             </span>
           </h3>
-          <p>{pet?.address}</p>
           <Map lat={pet?.lat} lng={pet?.lng} />
         </section>
       </main>
