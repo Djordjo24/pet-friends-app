@@ -1,24 +1,22 @@
 .form {
-  width: 100vw;
-  padding: 50px 200px;
+  width: 100%;
+  padding: 50px 0;
   background-color: var(--beige-color);
   color: var(--green-color);
-  display: grid;
-  justify-content: center;
 }
 
 .form fieldset {
-  width: 800px;
+  width: 100%;
   display: grid;
   flex-direction: row;
-  gap: 25px;
+  gap: 1.5rem;
   padding: 30px 50px;
   border: 1px dashed var(--green-color);
   border-radius: 5px;
 }
 
 .form legend {
-  font-size: 30px;
+  font-size: 2rem;
   padding: 0 10px;
   font-weight: bold;
 }
@@ -29,36 +27,20 @@
 }
 
 .form section .photoFrames {
-  height: 400px;
+  min-height: 180px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
 }
 
-.form section .photoFrames .one {
-  grid-column: 1/4;
-  grid-row: 1/3;
-}
-
-.form section .photoFrames .two {
-  grid-column: 4/6;
-  grid-row: 1;
-}
-
-.form section .photoFrames .three {
-  grid-column: 4/6;
-  grid-row: 2;
-}
-
 .form section .photoFrame {
-  min-height: 200px;
+  min-height: 100px;
   background-color: #ffff;
   color: var(--green-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -73,9 +55,9 @@
 .form section input,
 select,
 textarea {
-  height: 30px;
+  max-height: 2rem;
   padding: 5px 10px;
-  font-size: 15px;
+  font-size: 1rem;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -88,17 +70,17 @@ textarea::placeholder {
 }
 
 .form section select {
-  width: 130px;
+  max-width: 130px;
 }
 
 .form section textarea {
-  height: 100px;
+  max-height: 100px;
 }
 
 .form section input[type="date"],
 input[type="time"],
 input[type="number"] {
-  width: 130px;
+  max-width: 130px;
 }
 
 .form section .suggestions {
@@ -119,19 +101,19 @@ input[type="number"] {
 
 .form section .loadingSuggestions {
   padding: 5px;
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .form section .suggestionError {
   color: red;
   padding: 1px;
-  font-size: 13px;
+  font-size: 0.8rem;
 }
 
 .form section .errorMessage {
   color: red;
   padding: 1px;
-  font-size: 13px;
+  font-size: 0.8rem;
   display: none;
 }
 
@@ -149,7 +131,7 @@ form section input:invalid[data-focused="true"] ~ .errorMessage {
 }
 
 .form .formSubmit .submitBtn {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 50px;
   padding: 12px 25px 10px 25px;
@@ -168,4 +150,74 @@ form section input:invalid[data-focused="true"] ~ .errorMessage {
 
 .form .formSubmit .submitBtn:active {
   transform: scale(0.97);
+}
+
+@media (min-width: 400px) {
+  .form {
+    padding: 50px 70px;
+  }
+  .form section .photoFrames {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  .form {
+    padding: 50px 150px;
+  }
+  .form section .photoFrames {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 50px 150px;
+  }
+  .form section .photoFrames {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    height: 300px;
+  }
+  .form section .photoFrames .one {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  .form section .photoFrames .two {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+
+  .form section .photoFrames .three {
+    grid-column: 2/3;
+    grid-row: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .form {
+    padding: 50px 200px;
+  }
+  .form section .photoFrames {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form {
+    padding: 50px 300px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .form {
+    padding: 50px 400px;
+  }
 }

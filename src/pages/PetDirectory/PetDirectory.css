@@ -1,8 +1,7 @@
 .petDirectory main {
-  width: 100vw;
   background-color: var(--beige-color);
   color: var(--green-color);
-  padding: 50px 200px;
+  padding: 50px 20px;
 }
 
 .petDirectory main h1 {
@@ -12,14 +11,18 @@
 
 .petDirectory .layout {
   display: grid;
-  grid-template-columns: 4fr 1fr;
   gap: 30px;
 }
 
 .petDirectory .layout .pets {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.petDirectory .layout .pets a {
+  margin: 0 auto;
+  width: 100%;
 }
 
 .petDirectory .layout .sidebar .searchByName,
@@ -53,11 +56,37 @@
   font-size: 30px;
 }
 
-.petDirectory .layout .sidebar .category {
-  text-align: end;
+.petDirectory .layout .sidebar .category h2 {
+  padding-bottom: 10px;
 }
 
-.petDirectory .layout .sidebar .category h2 {
-  text-align: end;
-  padding-bottom: 10px;
+.petDirectory .layout .sidebar .category ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .petDirectory .layout {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .petDirectory main {
+    padding: 20px 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .petDirectory main {
+    padding: 20px 150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .petDirectory main {
+    padding: 20px 200px;
+  }
 }

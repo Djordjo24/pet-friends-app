@@ -1,6 +1,6 @@
 .petCategory {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
   margin: 10px 0;
 }
