@@ -50,7 +50,7 @@ export const petCategories = [
 export const Inputs = [
   {
     id: "petName",
-    missingLabel: "*Pet name",
+    missinglabel: "*Pet name",
     type: "text",
     name: "petName",
     required: true,
