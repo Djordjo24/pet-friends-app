@@ -6,6 +6,7 @@ interface PetCategoryProps {
   icon: React.ReactNode;
   title: string;
   setCategory: Dispatch<SetStateAction<string>>;
+  category: string;
 }
 
 const PetCategory = ({
@@ -13,14 +14,23 @@ const PetCategory = ({
   icon,
   title,
   setCategory,
+  category,
 }: PetCategoryProps) => {
   const handleCategoryClick = () => {
     setCategory(petCategory);
   };
   return (
     <li className="petCategory">
+      <button
+        style={{
+          backgroundColor:
+            petCategory === category ? "black" : "var(--green-color)",
+        }}
+        onClick={handleCategoryClick}
+      >
+        {icon}
+      </button>
       <p>{title}</p>
-      <button onClick={handleCategoryClick}>{icon}</button>
     </li>
   );
 };

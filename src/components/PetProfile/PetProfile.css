@@ -1,75 +1,123 @@
 .petProfile main {
-  width: 100vw;
-  height: 100%;
-  padding: 50px 200px;
+  width: 100%;
+  padding: 50px 20px;
   background-color: var(--beige-color);
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: repeat(3, auto);
-  gap: 20px;
   color: var(--green-color);
+  display: grid;
+  gap: 20px;
 }
 
-.petProfile main section {
+.petProfile main .images,
+.basicInfo,
+.additionalInfo,
+.address {
   border: 1px solid var(--green-color);
   border-radius: 10px;
   padding: 15px;
   background-color: #ffff;
-  display: grid;
-  gap: 5px;
 }
 
-.petProfile main .one {
-  height: 500px;
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(1, 1fr);
+.petProfile main .images {
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.petProfile main .one .large {
-  height: 100%;
-  grid-row: 1 / 3;
-  grid-column: 1;
-}
-
-.petProfile main .one .small {
-  height: 100%;
-  grid-row: 1/3;
-  grid-column: 2;
+.petProfile main .images .small {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.petProfile main .one .small img {
+.petProfile main .images .small img {
   height: calc(50% - 5px);
 }
 
-.petProfile main .one .petImage {
+.petProfile main .images .petImage {
   height: 100%;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
+  background-color: var(--beigeLight-color);
 }
 
-.petProfile main .two {
+.petProfile main .info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.petProfile main .info .basicInfo {
   grid-column: 1;
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
-.petProfile main .three {
-  grid-column: 2;
+.petProfile main .info .basicInfo h1 {
+  margin-bottom: 5px;
+}
+
+.petProfile main .info .additionalInfo {
+  grid-column: 1 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
 }
 
-.petProfile main .four {
-  grid-column: 1/-1;
+.petProfile main .info .additionalInfo a {
+  text-decoration: none;
+  color: var(--green-color);
 }
 
-.petProfile main .five {
-  grid-column: 1/-1;
+.petProfile main .address h3 {
+  margin-bottom: 10px;
+}
+
+.noBold {
+  font-weight: 100;
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  .petProfile main .images {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .petProfile main .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .petProfile main .info .additionalInfo {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .petProfile main .images {
+    height: 450px;
+  }
+}
+
+@media (min-width: 992px) {
+  .petProfile main {
+    padding: 20px 100px;
+  }
+  .petProfile main .images {
+    height: 550px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .petProfile main {
+    padding: 20px 150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .petProfile main {
+    padding: 20px 200px;
+  }
 }

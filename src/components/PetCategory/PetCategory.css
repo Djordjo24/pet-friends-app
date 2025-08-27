@@ -1,6 +1,6 @@
 .petCategory {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
   margin: 10px 0;
 }
@@ -31,4 +31,8 @@
 
 .petCategory button:active {
   transform: scale(0.95);
+}
+
+.selected {
+  box-shadow: 2px 5px 5px rgba(230, 7, 7, 0.852);
 }

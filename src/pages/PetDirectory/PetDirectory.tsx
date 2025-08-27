@@ -1,10 +1,12 @@
 import "./PetDirectory.css";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import { toUpperCase } from "../../utils/utils.ts";
 import { petCategories } from "../../mockData/mockData.tsx";
 import Header from "../../components/Header/Header.tsx";
 import PetCategory from "../../components/PetCategory/PetCategory.tsx";
 import PetCard from "../../components/PetCard/PetCard.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
 
 interface PetDirectoryProps {
   status: string;
@@ -12,21 +14,52 @@ interface PetDirectoryProps {
 
 interface PetObject {
   id: string;
-  images: [string, string, string];
+  images: string[];
   category: string;
   petName: string;
+  city: string;
 }
 
 const PetDirectory = ({ status }: PetDirectoryProps) => {
+  const [searchByName, setSearchByName] = useState("");
+  const [searchByCity, setSearchByCity] = useState("");
   const [category, setCategory] = useState("");
   const dataStatus = status === "missing" ? "MissingPets" : "FoundPets";
   const data = JSON.parse(localStorage.getItem(dataStatus) || "[]");
   const filteredData =
-    category === "reset"
+    !searchByName && !searchByCity && category === "reset"
       ? data
-      : data.filter((pet: PetObject) =>
-          category ? pet.category === category : true
-        );
+      : data
+          .filter((pet: PetObject) =>
+            status === "missing"
+              ? pet.petName.toLowerCase().includes(searchByName.toLowerCase())
+              : true
+          )
+          .filter((pet: PetObject) =>
+            pet.city
+              .split(" Urban Municipality")
+              .join("")
+              .split("City of ")
+              .join("")
+              .toLowerCase()
+              .includes(searchByCity.toLowerCase())
+          )
+          .filter((pet: PetObject) =>
+            category && category !== "reset" ? pet.category === category : true
+          );
+
+  useEffect(() => {
+    if (status !== "missing") setCategory("");
+    if (status !== "found") setCategory("");
+  }, [status]);
+
+  const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchByName(e.target.value);
+  };
+
+  const handleSearchByCity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchByCity(e.target.value);
+  };
 
   return (
     <div className="petDirectory">
@@ -34,6 +67,47 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
       <main>
         <h1>{toUpperCase(status)} Pets</h1>
         <div className="layout">
+          <div className="sidebar">
+            {status === "missing" && (
+              <div className="searchByName">
+                <FaSearch className="searchIcon" />
+                <input
+                  type="text"
+                  name="searchByName"
+                  placeholder="Search pets by name"
+                  onChange={handleSearchByName}
+                  value={searchByName}
+                />
+              </div>
+            )}
+            <div className="searchByCity">
+              <FaSearch className="searchIcon" />
+              <input
+                type="text"
+                name="searchByCity"
+                placeholder="Search pets by city"
+                onChange={handleSearchByCity}
+                value={searchByCity}
+              />
+            </div>
+            <div className="category">
+              <h2>Categories</h2>
+              <ul>
+                {petCategories.map((item) => {
+                  return (
+                    <PetCategory
+                      key={item.petCategory}
+                      petCategory={item.petCategory}
+                      icon={item.icon}
+                      title={item.title}
+                      setCategory={setCategory}
+                      category={category}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
           <div className="pets">
             {filteredData.length > 0 ? (
               filteredData.map((pet: PetObject) => (
@@ -44,30 +118,16 @@ const PetDirectory = ({ status }: PetDirectoryProps) => {
                   images={pet.images}
                   category={pet.category}
                   petName={pet.petName}
+                  city={pet.city}
                 />
               ))
             ) : (
               <p>There are currently no missing pets.</p>
             )}
           </div>
-          <div className="category">
-            <h2>Categories</h2>
-            <ul>
-              {petCategories.map((item) => {
-                return (
-                  <PetCategory
-                    key={item.petCategory}
-                    petCategory={item.petCategory}
-                    icon={item.icon}
-                    title={item.title}
-                    setCategory={setCategory}
-                  />
-                );
-              })}
-            </ul>
-          </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

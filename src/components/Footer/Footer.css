@@ -1,0 +1,112 @@
+footer {
+  background-color: var(--green-color);
+  padding: 30px 20px;
+}
+
+footer .sectionOne {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+}
+
+footer .sectionOne .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffff;
+}
+
+footer .sectionOne .logo .icon {
+  font-size: 2.25rem;
+  margin-right: 10px;
+}
+
+footer .sectionOne .logo h1 {
+  font-size: 1.8rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+footer .sectionOne .footerContent {
+  display: flex;
+  gap: 2rem 2rem;
+  flex-wrap: wrap;
+}
+
+footer .sectionOne .footerContent section {
+  width: max-content;
+  background-color: transparent;
+}
+
+footer .footerContent section h3 {
+  color: var(--beige-color);
+  padding-bottom: 15px;
+}
+
+footer .footerContent section nav {
+  display: grid;
+  gap: 0.5rem;
+}
+
+footer .sectionTwo {
+  height: 1px;
+  background-color: #ffffff28;
+  margin: 35px 0;
+}
+
+footer .sectionThree {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+}
+
+footer .sectionThree div {
+  display: flex;
+  gap: 1rem 1.2rem;
+  flex-wrap: wrap;
+  color: #ffff;
+}
+
+footer .sectionThree a {
+  color: #807f7f;
+}
+
+footer .sectionThree .social a {
+  color: #ffff;
+  font-size: 1.5rem;
+}
+
+footer .sectionThree .social a:hover {
+  color: var(--beige-color);
+}
+
+footer a {
+  color: #ffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+footer a:hover {
+  color: var(--beige-color);
+}
+
+@media (min-width: 992px) {
+  footer {
+    padding: 20px 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    padding: 20px 150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  footer {
+    padding: 20px 200px;
+  }
+}
