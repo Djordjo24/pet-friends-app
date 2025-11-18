@@ -1,13 +1,21 @@
 import "./Homepage.css";
 import { Link, useLocation } from "react-router-dom";
 import { Element, scroller } from "react-scroll";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Header from "../../components/Header/Header.tsx";
+import Bone from "../../components/Bone/Bone.tsx";
 import Footer from "../../components/Footer/Footer.tsx";
 import detective from "../../assets/images/detective.png";
 
+import { Application, extend } from "@pixi/react";
+import { Sprite } from "pixi.js";
+extend({
+  Sprite,
+});
+
 const Homepage = () => {
   const location = useLocation();
+  const parentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -158,6 +166,25 @@ const Homepage = () => {
           </section>
         </Element>
       </main>
+      <div ref={parentRef} className="throwTheBone">
+        <h3
+          style={{
+            textAlign: "center",
+            color: "var(--green-color)",
+            marginBottom: "10px",
+            fontSize: "3rem",
+          }}
+        >
+          Throw the bone
+        </h3>
+        <Application
+          resizeTo={parentRef}
+          backgroundColor={0xadd8e6}
+          antialias={true}
+        >
+          <Bone />
+        </Application>
+      </div>
       <Footer />
     </div>
   );

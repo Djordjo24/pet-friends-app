@@ -1,3 +1,9 @@
+.throwTheBone {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 60px;
+}
+
 .homepage .heroSection {
   background-color: var(--beige-color);
   padding: 50px 20px;
