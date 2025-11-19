@@ -21,7 +21,7 @@ Fill out the form, report a disappearance, or help with the search — together 
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Vite, TypeScript  
+- **Frontend:** React, Vite, TypeScript, PixiJS 
 - **Styling:** HTML, CSS, Responsive Design  
 - **Routing:** React Router  
 - **State & Storage:** localStorage  
